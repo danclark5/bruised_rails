@@ -21,6 +21,9 @@
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
+          <% if is_bruised_thumb?%>
+            <span aria-hidden="true"></span>
+          <% end %>
         </a>
       </div>
 
@@ -28,6 +31,9 @@
         <div class="navbar-start">
           <%= link_to "Home", root_path, class: "navbar-item" %>
           <%= link_to "Posts", posts_path, class: "navbar-item" %>
+          <% if is_bruised_thumb?%>
+            <%= link_to "New Post", new_post_path, class: "navbar-item" %>
+          <% end %>
           <a class="navbar-item">
             About
           </a>
@@ -59,6 +65,10 @@
       </div>
     <% end %>
 
-    <%= yield %>
+    <section class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>

@@ -1,8 +1,5 @@
-<section class="section">
-  <div class="container">
-    <h2 class="title is-2"> <%= @post.title %> </h2>
-    <div>
-      <%= @post.text %>
-    </div>
-  </div>
-</section>
+<h2 class="title is-2"> <%= @post.title %> </h2>
+<div>
+  <%= @post.text %>
+</div>
+<%= link_to 'Back', posts_path %>

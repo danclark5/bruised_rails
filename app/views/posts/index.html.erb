@@ -1,14 +1,12 @@
-<section class="section">
-  <div class="container">
-    <h1 class="title is-1"> Posts </h1>
-    <% if @posts.count > 0 %>
-      <% for post in @posts %>
-        <h2  class="title is-2"> <%= link_to(post.title, post) %> </h2>
-        <p> <%= post.text %> </p>
-      <% end %>
-    <% else %>
-      <p> No posts found. Please check back later. </p>
+<h2 class="title is-2"> Posts </h2>
+<% if @posts.count > 0 %>
+  <% for post in @posts %>
+    <h2  class="title is-2"> <%= link_to(post.title, post) %> </h2>
+    <p> <%= post.text %> </p>
+    <% if is_bruised_thumb? %>
+      <p> <%= link_to("Edit Post", edit_post_path(post)) %> </p>
     <% end %>
-  </div>
-</section>
-
+  <% end %>
+<% else %>
+  <p> No posts found. Please check back later. </p>
+<% end %>

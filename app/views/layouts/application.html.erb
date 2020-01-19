@@ -53,10 +53,15 @@
       </div>
     </nav>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
-
+    <% if flash.count > 0%>
+      <div class="container">
+        <div class="notification is-warning">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 
     <%= yield %>
   </body>

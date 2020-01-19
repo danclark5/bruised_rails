@@ -1,5 +1,5 @@
 <h2 class="title is-2"> <%= @post.title %> </h2>
 <div>
-  <%= @post.text %>
+  <%= Post.markdown.render(@post.text).html_safe %>
 </div>
 <%= link_to 'Back', posts_path %>

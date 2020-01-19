@@ -2,7 +2,7 @@
 <% if @posts.count > 0 %>
   <% for post in @posts %>
     <h2  class="title is-2"> <%= link_to(post.title, post) %> </h2>
-    <p> <%= post.text %> </p>
+    <div> <%= Post.markdown.render(post.text).html_safe %> </div>
     <% if is_bruised_thumb? %>
       <p> <%= link_to("Edit Post", edit_post_path(post)) %> </p>
     <% end %>

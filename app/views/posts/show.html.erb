@@ -4,5 +4,5 @@
 </div>
 <%= link_to 'Back', posts_path %>
 <% if is_bruised_thumb? %>
-  <%= link_to("Edit Post", edit_post_path(post), class:"button is-link is-small is-pulled-right") %>
+  <%= link_to("Edit Post", edit_post_path(@post), class:"button is-link is-small is-pulled-right") %>
 <% end %>

@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="title is-1"> Hey there! </h1>
     <p>
-    Welcome to where I share my learnings. You'll find little tidbits of experience that I have come along the hard way. If you find anything amiss please let me know.
+    Welcome to where I share my learnings. You'll find little tidbits of experience that I have come along through experience. If you find anything amiss please let me know.
     </p>
     <% for post in @posts %>
       <div class="box">
@@ -10,7 +10,7 @@
           <%= link_to(post.title, post) %>
         </h2>
         <div class="content">
-          <%= Post.markdown.render(post_snippet(post.text, 50)).html_safe %>
+          <%= Post.markdown.render(post.post_snippet(' ', 50)).html_safe %>
         </div>
       </div>
     <% end %>

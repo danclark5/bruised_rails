@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @twitter_title = @post.title
     @twitter_description = @post.post_snippet('.', 1)
   end
 

@@ -1,6 +1,18 @@
 <section class="section">
   <div class="container">
-    <h1 class="title is-1">Hey There!</h1>
-    <p>Thanks for visiting. It has been awhile since this site has been operational, but that will change in the next week or two. Soon there will be tidbits of software development information that I stumbled upon.</p>
+    <h1 class="title is-1"> Hey there! </h1>
+    <p>
+    Welcome to where I share my learnings. You'll find little tidbits of experience that I have come along the hard way. If you find anything amiss please let me know.
+    </p>
+    <% for post in @posts %>
+      <div class="box">
+        <h2 class="title is-2">
+          <%= link_to(post.title, post) %>
+        </h2>
+        <p>
+          <%= Post.markdown.render(post_snippet(post.text, 50)).html_safe %>
+        </p>
+      </div>
+    <% end %>
   </div>
 </section>

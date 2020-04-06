@@ -9,9 +9,9 @@
         <h2 class="title is-2">
           <%= link_to(post.title, post) %>
         </h2>
-        <p>
+        <div class="content">
           <%= Post.markdown.render(post_snippet(post.text, 50)).html_safe %>
-        </p>
+        </div>
       </div>
     <% end %>
   </div>

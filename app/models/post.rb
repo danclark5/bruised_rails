@@ -1,4 +1,8 @@
 class Post < ApplicationRecord
+  validates :title, presence: true
+  validates :text, presence: true
+  validates :is_live, :inclusion => {:in => [true, false]}
+
   def self.markdown
     Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
   end

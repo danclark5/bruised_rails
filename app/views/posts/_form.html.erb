@@ -25,6 +25,11 @@
   </p>
 
   <p>
+    <%= form.label :is_live, "Live?"%><br>
+    <%= select :post, :is_live, [['No', 'false'], ['Yes', 'true']]%>
+  </p>
+
+  <p>
     <%= form.submit class: "button is-primary"%>
   </p>
 

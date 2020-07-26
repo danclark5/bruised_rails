@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @twitter_title = @post.title
     @twitter_description = @post.post_snippet('.', 1)
   rescue ActiveRecord::RecordNotFound
-    redirect_to posts_path, alert: 'Post not found!.'
+    redirect_to posts_path, alert: 'Post not found!'
   end
 
   def new

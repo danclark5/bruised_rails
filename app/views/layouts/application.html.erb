@@ -34,9 +34,7 @@
           <% if is_bruised_thumb?%>
             <%= link_to "New Post", new_post_path, class: "navbar-item" %>
           <% end %>
-          <a class="navbar-item">
-            About
-          </a>
+          <%= link_to "About", page_path(page: 'about'), class: "navbar-item" %>
         </div>
       </div>
 

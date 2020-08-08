@@ -1,10 +1,12 @@
+require 'bruised_thumb_render'
+
 class Post < ApplicationRecord
   validates :title, presence: true
   validates :text, presence: true
   validates :is_live, :inclusion => {:in => [true, false]}
 
   def self.markdown
-    Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+    Redcarpet::Markdown.new(BruisedThumbRender, fenced_code_blocks: true)
   end
 
   def post_snippet(char, char_count)

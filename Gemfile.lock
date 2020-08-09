@@ -224,6 +224,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
+  coderay
   coffee-rails (~> 4.2)
   factory_bot_rails
   jbuilder (~> 2.5)

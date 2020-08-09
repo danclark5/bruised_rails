@@ -6,4 +6,8 @@ class BruisedThumbRender < Redcarpet::Render::HTML
       </div>
       </div>)
   end
+
+  def block_code(code, language)
+    CodeRay.scan(code, language).div
+  end
 end
